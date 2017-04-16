@@ -1,4 +1,4 @@
-from think in java ListPerformance.java output
+ from think in java ListPerformance.java output
 
 #观察小节
 - array 大小固定
@@ -7,10 +7,10 @@ from think in java ListPerformance.java output
 - 区分add操作, 一个是list add,一个是 iterater add
 
 ##关于ArrayList和Vector区别如下：线程安全
-1.ArrayList在内存不够时默认是扩展50% + 1个，Vector是默认扩展1倍。
-2.Vector提供indexOf(obj, start)接口，ArrayList没有。
-3.Vector属于线程安全级别的，但是大多数情况下不使用Vector，因为线程安全需要更大的系统开销。
-http://www.cnblogs.com/wanlipeng/archive/2010/10/21/1857791.html
+- 1.ArrayList在内存不够时默认是扩展50% + 1个，Vector是默认扩展1倍。
+- 2.Vector提供indexOf(obj, start)接口，ArrayList没有。
+- 3.Vector属于线程安全级别的，但是大多数情况下不使用Vector，因为线程安全需要更大的系统开销。
+[ref](http://www.cnblogs.com/wanlipeng/archive/2010/10/21/1857791.html)
 
 
 ##附件输出
