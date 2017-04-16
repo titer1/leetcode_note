@@ -1,6 +1,6 @@
 #include <math.h>
-#define INT_MAX (2147483647)
-#define INT_MIN (-2147483648)
+//#define INT_MAX (2147483647)
+//#define INT_MIN (-2147483648)
 class Solution {
 public:
     int isdigit(char a)
@@ -16,16 +16,16 @@ public:
     int atoi(const char *str) {
         //[space][-][digit]
         
-        if(str == null) return 0;
+        if(str == NULL) return 0;
         //ignore the space
         
-        int len = strlen(str);//not \0 endding
+        //int len = strlen(str);//not \0 endding
         
-        char *move = str;
+        char *move = (char*)str;
         while( (*move++) == ' ');//spaces
         
         int flag_minus = 1;
-        if（*move == '-')
+        if(*move == '-')
         {
             flag_minus = -1;
             move ++;
@@ -53,8 +53,7 @@ public:
         ret = flag_minus*ret;
         return ret;
         
-            
-        
+          
         
     }
         
