@@ -40,8 +40,14 @@ public class Solution {
         while( curr!=null && currN!=null) //must couple exist, or else not reverse
         {
             //back it up , bakup 2 
-            currN = curr.next;
+            if(curr.next !=null)
+            	currN = curr.next;
+            else
+                break;
+            
+            
             currN2 = currN.next;
+       
             
             currN.next = curr; //the second reverse .. name no diif
             
@@ -62,16 +68,3 @@ public class Solution {
         return dummy.next;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
