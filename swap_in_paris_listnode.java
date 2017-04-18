@@ -23,31 +23,39 @@ public class Solution {
         // prev catch coupe
         //update prev
         
-        //4.1 dummy
-        LinkNode dummy = new LinkNode(0);
+        //5.1
+        if(head == null)return null;
+        
+        //5.2 dummy
+        ListNode dummy = new ListNode(0);
         dummy.next = head;
-        LinkNode prev = dummy;
-        LinkNode curr = prev.next;
-        LinkNode next = curr.next;
+        
+        //5.2.a so many nodes ; couple before ,couple next
+        ListNode prev = dummy;
+        ListNode curr = prev.next;
+        ListNode currN = curr.next;
+        ListNode currN2 =null ;//may be exist
         
         //reverse couple ,update prev
-        while( curr!=null && next!=null) //must couple exist, or else not reverse
+        while( curr!=null && currN!=null) //must couple exist, or else not reverse
         {
+            //back it up , bakup 2 
+            currN = curr.next;
+            currN2 = currN.next;
             
-           // next = curr.next;
-            curr.next = prev;
+            currN.next = curr; //the second reverse .. name no diif
+            curr = currN2;// ???? very important 
             
-            prev.next = next ;//link head
+            //update
+            prev.next = currN ;//link head
             
-            prev = 
+            prev = currN2; 
             
-            
-            //bad
         }
         //
         
         //4.4 return dummy next
-        
+        return dummy.next;
     }
 }
 
