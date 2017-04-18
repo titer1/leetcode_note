@@ -44,12 +44,16 @@ public class Solution {
             currN2 = currN.next;
             
             currN.next = curr; //the second reverse .. name no diif
-            curr = currN2;// ???? very important 
             
+            curr.next = currN2 ; //三个指针，难度强于普通翻转3倍
+                
             //update
             prev.next = currN ;//link head
             
-            prev = currN2; 
+            prev = curr; //！！ update here, and it should move 1?
+            
+            //
+            curr = currN2;// ！！：其实经常这么搭配啊
             
         }
         //
