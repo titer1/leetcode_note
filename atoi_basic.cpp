@@ -1,15 +1,17 @@
+//+10次错误，关于 跳过空格，int_min的判断都有问题，还有while \0 判断。
+//todo 练习2
 #include <math.h>
 //#define INT_MAX (2147483647)
 //#define INT_MIN (-2147483648)
 class Solution {
 public:
-    int isdigit(char a)
+    bool isdigit(char a)
     {
     //if( *str>='0' && *str<='9') {  
         if( (a>='0') && (a<='9'))//ascii 0x31
-            return 1;
+            return true;
         else
-            return 0;
+            return false;
         
     }
 
@@ -23,7 +25,9 @@ public:
         //int len = strlen(str);//not \0 endding
         
         char *move = (char*)str;
-        while( (*move++) == ' ');//ignore spaces
+        while( (*move) == ' ')
+        move ++; //here 不同？？？？？？？
+        ;//ignore spaces
         
         int flag_minus = 1;
         if(*move == '-')
@@ -45,10 +49,18 @@ public:
         //return *move;
         //return isdigit(*move);//debug 
         
-        while( isdigit(*move) ==1)//deal all digit, else meet char
+        while( (*move) != '\0' )//deal all digit, else meet char // ==1  ''
         {
+        	//if(isdigit(*move))(a>='0') && (a<='9')
+            if( (*move >='0') && ( *move <='9'))
+            {
             arrDigit[len++] = *move - '0';
             move++;
+            }
+            else
+            {
+            	break;
+            }
             
         }
         
@@ -58,9 +70,9 @@ public:
         for(int j = len -1  ;j>=0; j--)
         {
             ret += arrDigit[j]*pow(10,len-1-j);
-            if((flag_minus==1)&& (ret>INT_MAX))
+            if((ret>INT_MAX) && (flag_minus==1))
                 return INT_MAX;
-            if((flag_minus!=1)&& (ret<INT_MIN))
+            if( (ret> 2147483648) && (flag_minus== -1) ) //(ret<INT_MIN))  //容易错
                 return INT_MIN;
         }
         //judge
