@@ -1,8 +1,9 @@
 
-低于50%正确率，加油！
+'低于50%正确率，加油！'
+'>80%,target'
 
 #java string api for char array
-.trim()
+trim()
 length()
 long ?
 charAt()
@@ -81,3 +82,29 @@ https://www.nowcoder.com/test/question/done?tid=7952113&qid=36709#summary
 
 补充： group by也和order by类似 
 	
+66%正确率， Ok
+
+
+#0419-2 test
+认识关于事务的acid(一致 隔离：隔离多个事务 持久：数据啊)) ,索引作用恢复
+
+##11 db 
+表建立索引时，update,delete,insert是要维护索引的
+
+## 12 
+grant [权限] on [table] to 'username'@'localhost';
+
+##13
+如果使用了表的别名，则都使用表的别名，而不能使用表名。 
+
+#14 自定义变量 in sql
+SELECT INTO 语句 
+SELECT INTO 语句从一个表中选取数据，然后把数据插入另一个表中。 
+SELECT INTO 语句常用于创建表的备份复件或者用于对记录进行存档。 
+
+#15索引部分优点
+每次update/insert/delete操作都会导致索引被重新更改
+
+索引可以避免全表扫描
+
+
