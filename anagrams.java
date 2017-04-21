@@ -24,7 +24,7 @@ public class Solution {
             Arrays.sort(ch0); // not array, but Arrays.sort
             String str0 = new String(ch0);
             
-            if( map.containsKey( str0))
+            if( map.containsKey( str0))  
             {
                 if(  map.get(str0).size() == 1)
                     listRet.add( map.get(str0).get(0) );//list first postion : get(0)
